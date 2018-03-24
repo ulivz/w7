@@ -6,17 +6,24 @@ import livereload  from 'connect-livereload'
 import lrserver  from 'livereload'
 import open  from 'open'
 import chalk from 'chalk'
-import { exists, resolve }  from './util.js'
+import { exists, resolve, isAbsolute, relative }  from './util.js'
 
 export default function ({
-                           path,
+                           cwd,
                            entry,
                            openInBrowser,
                            port
                          }) {
 
-  path = resolve(path || '.')
-  const indexFile = resolve(path, entry || 'index.html')
+  cwd = resolve(cwd || '.')
+
+  let indexFile
+  if (isAbsolute(entry)) {
+    indexFile = entry
+  } else {
+    entry = relative(cwd, entry)
+    indexFile = resolve(cwd, entry || 'index.html')
+  }
 
   if (!exists(indexFile)) {
     console.log('\nNo entry file found.\n')
@@ -26,21 +33,23 @@ export default function ({
   const server = connect()
 
   server.use(livereload())
-  server.use(serveStatic(path, {
+  server.use(serveStatic(cwd, {
     index: entry
   }))
 
-  server.listen(port || 4000)
+  port = port || 4000
+
+  server.listen(port)
 
   lrserver.createServer({
     exclusions: ['node_modules/']
-  }).watch(path)
+  }).watch(cwd)
 
   if (openInBrowser) {
     open(`http://localhost:${port}`)
   }
 
-  const msg = '\nServing ' + chalk.green(`${path}`) + ' now.\n' +
+  const msg = '\nServing ' + chalk.green(cwd) + ' now.\n' +
     'Listening at ' + chalk.green(`http://localhost:${port}`) + '\n'
   console.log(msg)
 }

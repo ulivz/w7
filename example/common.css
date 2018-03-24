@@ -1,0 +1,58 @@
+body {
+    font-family: Microsoft Yahei;
+    font-size: 35px;
+    font-weight: 100;
+    color: #fbfdfe;
+    text-align: center;
+    background: #2a2a2a;
+    padding: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        font-size: 25px;
+    }
+}
+
+.title {
+    overflow: hidden;
+    height: 100px;
+    line-height: 100px;
+}
+
+.title:after {
+    content: '——';
+    margin-left: 20px;
+}
+
+.title:before {
+    content: '——';
+    margin-right: 20px;
+}
+
+.subtitle {
+    font-size: 12px;
+    position: relative;
+    top: -30px;
+}
+
+.subtitle a {
+    color: #fff;
+}
+
+.note {
+    text-align: left;
+    margin-top: 50px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.note hr {
+    border-color: #aaa;
+}

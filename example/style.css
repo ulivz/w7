@@ -1,0 +1,36 @@
+header, footer {
+    height: 100px;
+    line-height: 100px;
+}
+
+header, footer {
+    background: #b47552;
+}
+
+.main {
+    display: flex;
+}
+
+.main .content, .main .aside {
+    height: 300px;
+    line-height: 300px;
+}
+
+.main .content {
+    height: 300px;
+    flex: 1;
+    line-height: 300px;
+    background: #d2ad9a;
+}
+
+.main .aside {
+    width: 100px;
+    flex: 0 0 100px;
+    float: left;
+    background: #805249;
+}
+
+
+
+
+

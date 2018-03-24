@@ -1,7 +1,14 @@
 'use strict'
 
-import fs from 'fs'
-export { resolve } from 'path'
+import { existsSync, readFileSync } from 'fs'
+import { resolve, isAbsolute, relative } from 'path'
+
+export {
+  existsSync,
+  resolve,
+  relative,
+  isAbsolute
+}
 
 export function cwd(path) {
   return resolve(process.cwd(), path || '.')
@@ -12,18 +19,18 @@ export function pwd(path) {
 }
 
 export function exists(path) {
-  if (fs.existsSync(path)) {
+  if (existsSync(path)) {
     return path
   }
   return undefined
 }
 
 export function pkg() {
-  return exports.exists(exports.cwd('package.json'))
-    ? require(exports.cwd('package.json'))
+  return exists(cwd('package.json'))
+    ? require(cwd('package.json'))
     : {}
 }
 
 export function read(path) {
-  return fs.readFileSync(path, 'utf-8').toString()
+  return readFileSync(path, 'utf-8').toString()
 }
