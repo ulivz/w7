@@ -8,7 +8,6 @@
   <a href="https://npmjs.com/package/w7"><img src="https://img.shields.io/npm/v/w7.svg?style=flat" alt="NPM version"></a> 
   <a href="https://npmjs.com/package/w7"><img src="https://img.shields.io/npm/dm/w7.svg?style=flat" alt="NPM downloads"></a>
   <a href="https://circleci.com/gh/ulivz/w7/tree/master"><img src="https://circleci.com/gh/ulivz/w7/tree/master.svg?style=shield" alt="CircleCI"></a>
-  <a href="https://codecov.io/gh/ulivz/w7"><img src="https://codecov.io/gh/ulivz/w7/branch/master/graph/badge.svg" alt="codecov"></a>
   <a href="https://github.com/ulivz/donate"><img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat" alt="donate"></a>
 </p>
 
@@ -29,6 +28,23 @@ w7 index.html --cwd example            # Custom cwd (alias: -c)
 w7 example/index.html --cwd example    # Ditto 
 w7 index.html --open-in-browser        # Open browser when server started (alias: -o)
 ```
+
+All options:
+
+```
+  COMMAND OPTIONS
+
+    -c, --cwd            Current working directory.
+    -e, --entry          Entry html file.
+    -p, --port           Dev server's port [Default: 4000]
+    -o, --openInBrowser  Whether to open browser when server started.
+
+  GLOBAL OPTIONS
+
+    -v, --version  Display version
+    -h, --help     Display help
+```
+
 
 ## Contributing
 

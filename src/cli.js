@@ -28,7 +28,7 @@ cli
     alias: 'e'
   })
   .option('port', {
-    desc: 'Dev server\'s port [Default: 400]',
+    desc: 'Dev server\'s port [Default: 4000]',
     alias: 'p'
   })
   .option('openInBrowser', {
