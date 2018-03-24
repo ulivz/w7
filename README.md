@@ -20,13 +20,13 @@ npm i w7 -g
 ## Usage
 
 ```bash
-w7                                     # Default entry: './index.html'   
-w7 --entry app.html                    # Custom entry (alias: -c)
-w7 app.html                            # Shortcut
-w7 --entry ./app.html --port 1994      # Custom port (alias: -p)
-w7 app.html --cwd src                  # Custom cwd (alias: -c)
-w7 src/app.html --cwd src              # Ditto 
-w7 app.html --open-in-browser          # Open browser when server started (alias: -o)
+  w7                                     # Default entry: './index.html'   
+  w7 --entry app.html                    # Custom entry (alias: -c)
+  w7 app.html                            # Shortcut
+  w7 --entry ./app.html --port 1994      # Custom port (alias: -p)
+  w7 app.html --cwd src                  # Custom cwd (alias: -c)
+  w7 src/app.html --cwd src              # Ditto 
+  w7 app.html --open-in-browser          # Open browser when server started (alias: -o)
 ```
 
 All options:
