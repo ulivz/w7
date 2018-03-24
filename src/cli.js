@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import cac from 'cac'
+import chalk from 'chalk'
 import { existsSync, writeFileSync } from './util'
 import w7 from '.'
 import { createBoilerplate } from './boilerplate/index'
@@ -41,10 +42,17 @@ cli.command('init', 'Create boilerplate', async (input, flags) => {
   if (flags.lib) {
     flags.lib = flags.lib.split(',').map(i => i.trim())
   }
-  flags.title = flags.name || 'my test'
+  if (input.length) {
+    flags.lib = (flags.lib || []).concat(input)
+  }
+  flags.title = flags.name || ((flags.lib[0] || 'My') + ' App')
   const html = createBoilerplate(flags)
-  const filename = flags.title.replace(/\s/g, '-') + '.html'
+  const filename = flags.title.replace(/\s/g, '-').toLowerCase() + '.html'
   writeFileSync(filename, html, 'utf-8')
+
+  const msg = '\n  > Generating ' + chalk.green(filename) + '.\n' +
+    '  > Hack with ' + chalk.green(`w7 ${filename}`) + ' now.\n'
+  console.log(msg)
 })
   .option('lib', {
     desc: 'Preset library name.',

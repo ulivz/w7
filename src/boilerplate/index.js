@@ -1,6 +1,7 @@
 'use strict';
 
 import vue from './vue/index'
+import react from './react/index'
 
 function createHtmlDocument({ title, head, body, script }) {
   return `<!DOCTYPE html>
@@ -13,9 +14,7 @@ ${head}
 </head>
 <body>
 ${body}
-  <script>
 ${script}
-  </script>
 </body>
 </html>
 `
@@ -30,12 +29,17 @@ function addIndent(content, spaces = 2) {
   return content.split('\n').map(line => indent + line).join('\n')
 }
 
+function getScriptURL({ src, type }) {
+  return `<script src="${src}"${type ? " type=\"" + type + '"' : ''}"></script>`
+}
+
 function getLibraryUrl(lib) {
-  return `  <script src="http://unpkg.com/${lib}"></script>`
+  return '  ' + getScriptURL({ src: 'http://unpkg.com/' + lib })
 }
 
 const BUILTIN_BOILERPLATES = {
-  vue
+  vue,
+  react
 }
 
 export function createBoilerplate({ title, lib }) {
@@ -48,15 +52,18 @@ export function createBoilerplate({ title, lib }) {
     for (const item of lib) {
       if (!isSomeBoilerplateAdded && BUILTIN_BOILERPLATES[item]) {
         isSomeBoilerplateAdded = true
-        const { js, css, html } = BUILTIN_BOILERPLATES[item]
-        body = addIndent(html, 2)
-        head = `<style>\n${addIndent(css, 2)}\n</style>`
-        script = addIndent(js, 4)
+        const { style, template } = BUILTIN_BOILERPLATES[item]
+        body = addIndent(template, 2)
+        head = `<style>\n${addIndent(style, 2)}\n</style>`
+      } else {
+        body += ('\n' + getLibraryUrl(item))
       }
-      body += ('\n' + getLibraryUrl(item))
     }
   }
   body = body || '<div id="app"></div>'
   head = head || '<style></style>'
+  if (!isSomeBoilerplateAdded) {
+    script = '<script>\n</script>'
+  }
   return createHtmlDocument({ title, head, body, script })
 }
