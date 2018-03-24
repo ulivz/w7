@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import cac from 'cac'
-import { existsSync } from './util'
+import { existsSync, writeFileSync } from './util'
 import w7 from '.'
+import { createBoilerplate } from './boilerplate/index'
 
 const cli = cac()
 
@@ -34,6 +35,24 @@ cli
   .option('openInBrowser', {
     desc: 'Whether to open browser when server started.',
     alias: 'o'
+  })
+
+cli.command('init', 'Create boilerplate', async (input, flags) => {
+  if (flags.lib) {
+    flags.lib = flags.lib.split(',').map(i => i.trim())
+  }
+  flags.title = flags.name || 'my test'
+  const html = createBoilerplate(flags)
+  const filename = flags.title.replace(/\s/g, '-') + '.html'
+  writeFileSync(filename, html, 'utf-8')
+})
+  .option('lib', {
+    desc: 'Preset library name.',
+    alias: 'l'
+  })
+  .option('name', {
+    desc: 'Generated file\'s name.',
+    alias: 'n'
   })
 
 cli.parse()

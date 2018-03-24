@@ -1,11 +1,25 @@
 'use strict'
 
-import { existsSync } from 'fs'
-import { resolve, isAbsolute, relative } from 'path'
+import { existsSync, writeFileSync, createWriteStream } from 'fs'
+import { resolve, isAbsolute, relative, basename } from 'path'
+import { get } from 'http'
 
 export {
   existsSync,
+  writeFileSync,
   resolve,
   relative,
   isAbsolute
+}
+
+export function downloadFile(url, target) {
+  target = target || basename(url)
+  const targetFile = createWriteStream(target)
+  return new Promise((resolve, reject) => {
+    get(url, function (res) {
+      res.pipe(targetFile)
+        .on('end', resolve)
+        .on('error', reject)
+    })
+  })
 }
