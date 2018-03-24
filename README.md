@@ -22,8 +22,8 @@ npm i w7 -g
 ## Usage
 
 ```bash
-w7 --entry ./test.html 
-w7 --entry ./test.html  --port 1994
+w7 --entry ./index.html 
+w7 --entry ./index.html  --port 1994
 ```
 
 ## Contributing

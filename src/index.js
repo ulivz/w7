@@ -16,13 +16,14 @@ export default function ({
                          }) {
 
   cwd = resolve(cwd || '.')
+  entry = entry || 'index.html'
 
   let indexFile
   if (isAbsolute(entry)) {
     indexFile = entry
   } else {
     entry = relative(cwd, entry)
-    indexFile = resolve(cwd, entry || 'index.html')
+    indexFile = resolve(cwd, entry)
   }
 
   if (!exists(indexFile)) {

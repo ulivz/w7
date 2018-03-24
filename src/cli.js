@@ -17,7 +17,6 @@ cli
     if (options.input && existsSync(options.input[0])) {
       options.entry = options.input[0]
     }
-    console.log(options)
     return w7(options)
   })
   .option('cwd', {
@@ -30,7 +29,7 @@ cli
   })
   .option('port', {
     desc: 'Dev server\'s port [Default: 400]',
-    alias: 'o'
+    alias: 'p'
   })
   .option('openInBrowser', {
     desc: 'Whether to open browser when server started.',
