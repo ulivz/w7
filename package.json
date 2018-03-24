@@ -12,7 +12,6 @@
     "dist"
   ],
   "scripts": {
-    "test:cov": "jest --coverage && npm run lint",
     "test": "npm run lint && jest",
     "lint": "xo",
     "prepublish": "npm run build",
