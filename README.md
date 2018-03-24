@@ -1,9 +1,10 @@
-<p align="center" style="font-size: 36px">
-  w7
-</p>
+<p align="center">w7</p>
 
 <p align="center">
   <b><i>Server the pure htmls, Updates the browser on changes.</i></b>
+</p>
+
+<p align="center">
   <a href="https://npmjs.com/package/w7"><img src="https://img.shields.io/npm/v/w7.svg?style=flat" alt="NPM version"></a> 
   <a href="https://npmjs.com/package/w7"><img src="https://img.shields.io/npm/dm/w7.svg?style=flat" alt="NPM downloads"></a>
   <a href="https://circleci.com/gh/ulivz/w7/tree/master"><img src="https://circleci.com/gh/ulivz/w7/tree/master.svg?style=shield" alt="CircleCI"></a>
