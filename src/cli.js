@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import cac from 'cac'
-import w7 from '.'
 import { existsSync } from './util'
+import w7 from '.'
 
 const cli = cac()
 

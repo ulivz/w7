@@ -10,7 +10,6 @@
   <a href="https://circleci.com/gh/ulivz/w7/tree/master"><img src="https://circleci.com/gh/ulivz/w7/tree/master.svg?style=shield" alt="CircleCI"></a>
   <a href="https://codecov.io/gh/ulivz/w7"><img src="https://codecov.io/gh/ulivz/w7/branch/master/graph/badge.svg" alt="codecov"></a>
   <a href="https://github.com/ulivz/donate"><img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat" alt="donate"></a>
-  <a href="https://chat.ulivz.moe"><img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg?style=flat" alt="chat"></a>
 </p>
 
 ## Install

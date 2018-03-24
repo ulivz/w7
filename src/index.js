@@ -1,12 +1,12 @@
 'use strict'
 
-import serveStatic  from 'serve-static'
-import connect  from 'connect'
-import livereload  from 'connect-livereload'
-import lrserver  from 'livereload'
-import open  from 'open'
+import serveStatic from 'serve-static'
+import connect from 'connect'
+import livereload from 'connect-livereload'
+import lrserver from 'livereload'
+import open from 'open'
 import chalk from 'chalk'
-import { exists, resolve, isAbsolute, relative }  from './util.js'
+import { existsSync, resolve, isAbsolute, relative } from './util'
 
 export default function ({
                            cwd,
@@ -14,7 +14,6 @@ export default function ({
                            openInBrowser,
                            port
                          }) {
-
   cwd = resolve(cwd || '.')
   entry = entry || 'index.html'
 
@@ -26,8 +25,9 @@ export default function ({
     indexFile = resolve(cwd, entry)
   }
 
-  if (!exists(indexFile)) {
+  if (!existsSync(indexFile)) {
     console.log('\nNo entry file found.\n')
+    /* eslint-disable unicorn/no-process-exit */
     process.exit(0)
   }
 
