@@ -39,17 +39,25 @@ cli
   })
 
 cli.command('init', 'Create boilerplate', async (input, flags) => {
-  if (flags.lib) {
-    flags.lib = flags.lib.split(',').map(i => i.trim())
-  }
-  if (input.length) {
-    flags.lib = (flags.lib || []).concat(input)
-  }
-  flags.title = flags.name || ((flags.lib[0] || 'My') + ' App')
-  const html = createBoilerplate(flags)
-  const filename = flags.title.replace(/\s/g, '-').toLowerCase() + '.html'
-  writeFileSync(filename, html, 'utf-8')
+  let { lib, name } = flags
+  lib = lib || ''
 
+  if (input.length) {
+    for (let i = 0, l = input.length; i < l; i++) {
+      lib += ((lib ? ',' : '') + input[i])
+    }
+  }
+
+  if (lib) {
+    lib = lib.split(',').map(i => i.trim())
+  }
+
+  let title = name || ((lib ? lib.join(' ') : 'My') + ' App')
+
+  const html = createBoilerplate({ title, lib })
+  const filename = title.trim().replace(/(\s|,)/g, '-').toLowerCase() + '.html'
+
+  writeFileSync(filename, html, 'utf-8')
   const msg = '\n  > Generating ' + chalk.green(filename) + '.\n' +
     '  > Hack with ' + chalk.green(`w7 ${filename}`) + ' now.\n'
   console.log(msg)
