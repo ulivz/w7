@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-import vue from './vue/index'
-import react from './react/index'
-import rxjs from './rxjs/index'
-import vueJsx from './vue-jsx/index'
+import vue from './boilerplate/vue/index'
+import react from './boilerplate/react/index'
+import rxjs from './boilerplate/rxjs/index'
+import vueJsx from './boilerplate/vue-jsx/index'
 
 const BUILTIN_BOILERPLATES = {
   vue,
@@ -45,8 +45,7 @@ function getLibraryUrl(lib) {
   return getScriptURL({ src: 'http://unpkg.com/' + lib }) + '\n'
 }
 
-
-export function createBoilerplate({ title, lib }) {
+function createBoilerplate({ title, lib }) {
   let body = ''
   let head = ''
   let isSomeBoilerplateAdded = false
@@ -67,9 +66,14 @@ export function createBoilerplate({ title, lib }) {
   }
   head = head || '<style></style>'
   if (!isSomeBoilerplateAdded) {
-    body = '  <div id="app"></div>' + body
-    body = body + '\n<script>\n</script>'
+    body = '<div id="app"></div>\n' + body
+    body += '<script>\n</script>'
   }
+  head = addIndent(head, 2)
   body = addIndent(body, 2)
   return createHtmlDocument({ title, head, body })
+}
+
+export default {
+  createBoilerplate
 }

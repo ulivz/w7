@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import cac from 'cac'
 import chalk from 'chalk'
-import { existsSync, writeFileSync } from './util'
-import w7 from '.'
-import { createBoilerplate } from './boilerplate/index'
+import superb from 'superb'
+import { existsSync, writeFileSync, getGitUser } from './util'
+import { devServer, boilerplate } from '.'
 
 const cli = cac()
 
@@ -19,7 +19,7 @@ cli
     if (options.input && existsSync(options.input[0])) {
       options.entry = options.input[0]
     }
-    return w7(options)
+    return devServer(options)
   })
   .option('cwd', {
     desc: 'Current working directory.',
@@ -42,7 +42,7 @@ cli.command('init', 'Create boilerplate', async (input, flags) => {
   let { lib, name } = flags
   lib = lib || ''
 
-  if (input.length) {
+  if (input.length > 0) {
     for (let i = 0, l = input.length; i < l; i++) {
       lib += ((lib ? ',' : '') + input[i])
     }
@@ -52,9 +52,10 @@ cli.command('init', 'Create boilerplate', async (input, flags) => {
     lib = lib.split(',').map(i => i.trim())
   }
 
-  let title = name || ((lib ? lib.join(' ') : 'My') + ' App')
+  const user = getGitUser()
+  const title = name || (lib ? lib.join(' ') : user.name + ' ' + superb() + ' app')
 
-  const html = createBoilerplate({ title, lib })
+  const html = boilerplate.createBoilerplate({ title, lib })
   const filename = title.trim().replace(/(\s|,)/g, '-').toLowerCase() + '.html'
 
   writeFileSync(filename, html, 'utf-8')
