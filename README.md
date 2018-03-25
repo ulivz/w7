@@ -46,6 +46,30 @@ All options:
 ```
 
 
+## Boilerplate
+
+From `0.0.4`, some preset boilerplates for you to kick off your project quickly.
+
+```bash
+  w7 init              # Generate a simple html file with Random filename (includes git user name.)
+  w7 init --lib vue    # Generate a Counter boilerplate by vue.
+  w7 init --lib react  # Generate a Counter boilerplate by React.
+```
+
+Built-in boilerplates for now:
+
+- vue
+- react
+- rxjs
+
+Unbuilt libraries will be injected directly from unpkg:
+
+```bash
+w7 init -lib jquery  # <script src="http://unpkg.com/jquery"></script> will be injected.
+```
+
+Free free to tell me your wanted Built-in boilerplates. :)
+
 ## Contributing
 
 1. Fork it!
