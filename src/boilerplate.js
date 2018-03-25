@@ -1,9 +1,9 @@
 'use strict';
 
-import vue from './vue/index'
-import react from './react/index'
-import rxjs from './rxjs/index'
-import vueJsx from './vue-jsx/index'
+import vue from './boilerplate/vue/index'
+import react from './boilerplate/react/index'
+import rxjs from './boilerplate/rxjs/index'
+import vueJsx from './boilerplate/vue-jsx/index'
 
 const BUILTIN_BOILERPLATES = {
   vue,
