@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://rawgit.com/ulivz/w7/master/.media/logo.png" alt="w7">
+  <img width="150" src="https://rawgit.com/ulivz/w7/master/.media/logo.png" alt="w7">
 </p>
 
 <p align="center">
@@ -16,10 +16,11 @@
 
 ## Features
 
-* Simple CLI without built process.
+* Pure HTML without any built process.
 * Hot code reloading.
 * Automatically transforms JS files using Buble/Babel (Vue & React).
-* Built-in boilerplates
+* Built-in boilerplates.
+
 
 ## Install
 
@@ -27,9 +28,10 @@
 npm i w7 -g
 ```
 
+
 ## Usage
 
-```bash
+```
   w7                                     # Default entry: './index.html'   
   w7 --entry app.html                    # Custom entry (alias: -c)
   w7 app.html                            # Shortcut
@@ -55,6 +57,7 @@ All options:
     -h, --help     Display help
 ```
 
+
 ## Q & A
 
 - **Is this project not the opposite of front-end engineering**?
@@ -66,7 +69,7 @@ All options:
 
 From `w7@0.0.4`, some preset boilerplates for you to kick off your project quickly.
 
-```bash
+```
   w7 init              # Generate a simple html file with random filename (includes git user name.)
   w7 init --lib vue    # Generate a Counter boilerplate with vue.
   w7 init --lib react  # Generate a Counter boilerplate with React+JSX.
@@ -80,7 +83,7 @@ Built-in boilerplates for now:
 
 Unbuilt libraries will be injected from unpkg directly:
 
-```bash
+```
   w7 init -lib jquery   # <script src="http://unpkg.com/jquery"></script> will be injected.
 ```
 
