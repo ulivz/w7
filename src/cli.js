@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import cac from 'cac'
 import chalk from 'chalk'
-import { existsSync, writeFileSync } from './util'
+import superb from 'superb'
+import { existsSync, writeFileSync, getGitUser } from './util'
 import w7 from '.'
 import { createBoilerplate } from './boilerplate/index'
 
@@ -52,8 +53,8 @@ cli.command('init', 'Create boilerplate', async (input, flags) => {
     lib = lib.split(',').map(i => i.trim())
   }
 
-  let title = name || ((lib ? lib.join(' ') : 'My') + ' App')
-
+  const user = getGitUser()
+  const title = name || lib ? lib.join(' ') : user.name + ' ' + superb() + ' app'
   const html = createBoilerplate({ title, lib })
   const filename = title.trim().replace(/(\s|,)/g, '-').toLowerCase() + '.html'
 

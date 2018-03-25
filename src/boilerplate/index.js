@@ -70,6 +70,7 @@ export function createBoilerplate({ title, lib }) {
     body = '  <div id="app"></div>' + body
     body = body + '\n<script>\n</script>'
   }
+  head = addIndent(head, 2)
   body = addIndent(body, 2)
   return createHtmlDocument({ title, head, body })
 }

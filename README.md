@@ -46,6 +46,19 @@ All options:
 ```
 
 
+## Boilerplate
+
+From `0.0.4`, some preset boilerplate for you to quickly start your project.
+
+```bash
+  w7 init --lib vue --name vue.html
+```
+
+- vue
+- react
+- rxjs
+
+
 ## Contributing
 
 1. Fork it!

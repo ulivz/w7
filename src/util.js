@@ -3,6 +3,8 @@
 import { existsSync, writeFileSync, createWriteStream } from 'fs'
 import { resolve, isAbsolute, relative, basename } from 'path'
 import { get } from 'http'
+import gitConfig from 'git-config'
+import gitConfigPath from 'git-config-path'
 
 export {
   existsSync,
@@ -22,4 +24,11 @@ export function downloadFile(url, target) {
         .on('error', reject)
     })
   })
+}
+
+export function getGitUser() {
+  return Object.assign(
+    { name: '', email: '' },
+    gitConfig.sync(gitConfigPath('global')).user
+  )
 }
