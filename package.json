@@ -1,7 +1,7 @@
 {
   "name": "w7",
   "version": "0.0.3",
-  "description": "server the pure htmls, Updates the browser on changes.",
+  "description": "serves the pure htmls, Updates the browser on changes.",
   "repository": {
     "url": "ULIVZ/dev-server",
     "type": "git"
