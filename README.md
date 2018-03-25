@@ -1,4 +1,6 @@
-<p align="center">w7</p>
+<p align="center">
+  <img src="https://rawgit.com/ulivz/w7/master/.media/logo.png" alt="w7">
+</p>
 
 <p align="center">
   <b><i>Server the pure htmls, Updates the browser on changes.</i></b>
@@ -48,12 +50,12 @@ All options:
 
 ## Boilerplate
 
-From `0.0.4`, some preset boilerplates for you to kick off your project quickly.
+From `w7@0.0.4`, some preset boilerplates for you to kick off your project quickly.
 
 ```bash
-  w7 init              # Generate a simple html file with Random filename (includes git user name.)
-  w7 init --lib vue    # Generate a Counter boilerplate by vue.
-  w7 init --lib react  # Generate a Counter boilerplate by React.
+  w7 init              # Generate a simple html file with random filename (includes git user name.)
+  w7 init --lib vue    # Generate a Counter boilerplate with vue.
+  w7 init --lib react  # Generate a Counter boilerplate with React+JSX.
 ```
 
 Built-in boilerplates for now:
@@ -62,13 +64,13 @@ Built-in boilerplates for now:
 - react
 - rxjs
 
-Unbuilt libraries will be injected directly from unpkg:
+Unbuilt libraries will be injected from unpkg directly:
 
 ```bash
-w7 init -lib jquery  # <script src="http://unpkg.com/jquery"></script> will be injected.
+  w7 init -lib jquery   # <script src="http://unpkg.com/jquery"></script> will be injected.
 ```
 
-Free free to tell me your wanted Built-in boilerplates. :)
+Free free to tell me what your want to be built in. :)
 
 ## Contributing
 
