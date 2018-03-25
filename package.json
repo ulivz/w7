@@ -43,10 +43,13 @@
     "chalk": "^2.3.2",
     "connect": "^3.6.6",
     "connect-livereload": "^0.6.0",
+    "git-config": "^0.0.7",
+    "git-config-path": "^1.0.1",
     "livereload": "^0.7.0",
     "open": "0.0.5",
     "rollup-plugin-babel": "^3.0.3",
-    "serve-static": "^1.13.2"
+    "serve-static": "^1.13.2",
+    "superb": "^2.0.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.4.0",
@@ -59,6 +62,12 @@
     "extends": "rem",
     "envs": [
       "jest"
-    ]
+    ],
+    "ignore": [
+      "src/boilerplate/**"
+    ],
+    "rules": {
+      "quotes": 0
+    }
   }
 }
