@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 import cac from 'cac'
-import { existsSync } from './util'
+import chalk from 'chalk'
+import { existsSync, writeFileSync } from './util'
 import w7 from '.'
+import { createBoilerplate } from './boilerplate/index'
 
 const cli = cac()
 
@@ -34,6 +36,39 @@ cli
   .option('openInBrowser', {
     desc: 'Whether to open browser when server started.',
     alias: 'o'
+  })
+
+cli.command('init', 'Create boilerplate', async (input, flags) => {
+  let { lib, name } = flags
+  lib = lib || ''
+
+  if (input.length) {
+    for (let i = 0, l = input.length; i < l; i++) {
+      lib += ((lib ? ',' : '') + input[i])
+    }
+  }
+
+  if (lib) {
+    lib = lib.split(',').map(i => i.trim())
+  }
+
+  let title = name || ((lib ? lib.join(' ') : 'My') + ' App')
+
+  const html = createBoilerplate({ title, lib })
+  const filename = title.trim().replace(/(\s|,)/g, '-').toLowerCase() + '.html'
+
+  writeFileSync(filename, html, 'utf-8')
+  const msg = '\n  > Generating ' + chalk.green(filename) + '.\n' +
+    '  > Hack with ' + chalk.green(`w7 ${filename}`) + ' now.\n'
+  console.log(msg)
+})
+  .option('lib', {
+    desc: 'Preset library name.',
+    alias: 'l'
+  })
+  .option('name', {
+    desc: 'Generated file\'s name.',
+    alias: 'n'
   })
 
 cli.parse()
