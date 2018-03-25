@@ -57,9 +57,9 @@ All options:
 
 ## Q & A
 
-- Is this project not the opposite of front-end engineering?
+- **Is this project not the opposite of front-end engineering**?
 
-  No, the reason for the birth of this project is not to resist front-end engineering. It is only for the excessive development of front-end engineering. We often need a lot of construction processes to test a very simple function. With this project, it will be very useful when just testing some simple prototype features. In other words, it is more like an offline version of [**_codepan_**](https://codepan.net)
+  Of course not, on the contrary, I am an avid front-end engineering supporter, the reason for the birth of this project is not to resist front-end engineering. It is only for the excessive development of front-end engineering. We often need a lot of construction processes to test a very simple function. With this project, it will be very useful when just testing some simple prototype features. In other words, it is more like an offline version of [**_codepan_**](https://codepan.net).
 
 
 ## Boilerplate
