@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   input: 'src/{index,cli}.js',
@@ -9,6 +9,6 @@ module.exports = {
       'src/boilerplate/**/script.js',
       'src/boilerplate/**/style',
       'src/boilerplate/**/template.html'
-    ],
+    ]
   })]
 }

@@ -42,7 +42,7 @@ cli.command('init', 'Create boilerplate', async (input, flags) => {
   let { lib, name } = flags
   lib = lib || ''
 
-  if (input.length) {
+  if (input.length > 0) {
     for (let i = 0, l = input.length; i < l; i++) {
       lib += ((lib ? ',' : '') + input[i])
     }

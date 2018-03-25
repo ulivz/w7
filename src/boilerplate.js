@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 import vue from './boilerplate/vue/index'
 import react from './boilerplate/react/index'
@@ -45,8 +45,7 @@ function getLibraryUrl(lib) {
   return getScriptURL({ src: 'http://unpkg.com/' + lib }) + '\n'
 }
 
-
-export function createBoilerplate({ title, lib }) {
+function createBoilerplate({ title, lib }) {
   let body = ''
   let head = ''
   let isSomeBoilerplateAdded = false
@@ -68,9 +67,13 @@ export function createBoilerplate({ title, lib }) {
   head = head || '<style></style>'
   if (!isSomeBoilerplateAdded) {
     body = '  <div id="app"></div>' + body
-    body = body + '\n<script>\n</script>'
+    body += '\n<script>\n</script>'
   }
   head = addIndent(head, 2)
   body = addIndent(body, 2)
   return createHtmlDocument({ title, head, body })
+}
+
+export default {
+  createBoilerplate
 }

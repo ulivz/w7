@@ -1,5 +1,5 @@
-import w7 from '../src'
+import devServer from '../src/dev-server'
 
 test('main', () => {
-  expect(typeof w7).toBe('function')
+  expect(typeof devServer).toBe('function')
 })

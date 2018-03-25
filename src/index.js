@@ -1,7 +1,7 @@
 'use strict'
 
 import devServer from './dev-server'
-import * as boilerplate from './boilerplate'
+import boilerplate from './boilerplate'
 
 export {
   devServer,
