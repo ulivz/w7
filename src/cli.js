@@ -59,8 +59,8 @@ cli.command('init', 'Create boilerplate', async (input, flags) => {
   const filename = title.trim().replace(/(\s|,)/g, '-').toLowerCase() + '.html'
 
   writeFileSync(filename, html, 'utf-8')
-  const msg = '\n  > Generating ' + chalk.green(filename) + '.\n' +
-    '  > Hack with ' + chalk.green(`w7 ${filename}`) + ' now.\n'
+  const msg = '\n  > Generated ' + chalk.green(filename) + '.\n' +
+    '  > Go hacking with ' + chalk.green(`w7 ${filename}`) + '.\n'
   console.log(msg)
 })
   .option('lib', {
