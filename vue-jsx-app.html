@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>vue-jsx App</title>
+  <style>
+    .button {
+      color: white;
+      border: 1px solid #e2e2e2;
+      background: magenta;
+      padding: 20px 0;
+      font-size: 2rem;
+      width: 200px;
+    }
+
+    .counter {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<div id="app"></div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/babel-preset-vue@2.0.2/dist/babel-preset-vue.min.js"></script>
+<script
+  src="https://unpkg.com/babel-plugin-transform-vue-jsx@3.7.0/dist/babel-plugin-transform-vue-jsx.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script>
+  Babel.registerPreset('vue', PresetVue)
+  Babel.registerPlugin('transform-vue-jsx', window['babel-plugin-transform-vue-jsx'])
+</script>
+<script type="text/babel" data-presets="vue" data-plugins="transform-vue-jsx">
+  new Vue({
+    el: '#app',
+    data: { count: 0 },
+    methods: {
+      inc() {
+        this.count++
+      },
+      dec() {
+        this.count--
+      }
+    },
+    render() {
+      return (
+        <div>
+          <h2>{this.count}</h2>
+          <button onClick={this.inc}>inc</button>
+          <button onClick={this.dec}>dec</button>
+        </div>
+      )
+    }
+  })
+</script>
+
+</body>
+</html>

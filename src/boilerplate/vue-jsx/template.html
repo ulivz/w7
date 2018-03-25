@@ -1,0 +1,35 @@
+<div id="app"></div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/babel-preset-vue@2.0.2/dist/babel-preset-vue.min.js"></script>
+<script src="https://unpkg.com/babel-plugin-transform-vue-jsx@3.7.0/dist/babel-plugin-transform-vue-jsx.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script>
+  Babel.registerPreset('vue', PresetVue)
+  Babel.registerPlugin('transform-vue-jsx', window['babel-plugin-transform-vue-jsx'])
+</script>
+
+<script type="text/babel" data-presets="vue" data-plugins="transform-vue-jsx">
+  new Vue({
+    el: '#app',
+    data: { count: 0 },
+    methods: {
+      inc() {
+        this.count++
+      },
+      dec() {
+        this.count--
+      }
+    },
+    render() {
+      return (
+        <div id="app">
+          <h2>{this.count}</h2>
+          <button onClick={this.inc}>inc</button>
+          <button onClick={this.dec}>dec</button>
+        </div>
+      )
+    }
+  })
+</script>

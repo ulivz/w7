@@ -2,6 +2,15 @@
 
 import vue from './vue/index'
 import react from './react/index'
+import rxjs from './rxjs/index'
+import vueJsx from './vue-jsx/index'
+
+const BUILTIN_BOILERPLATES = {
+  vue,
+  react,
+  rxjs,
+  'vue-jsx': vueJsx
+}
 
 function createHtmlDocument({ title, head, body }) {
   return `<!DOCTYPE html>
@@ -36,10 +45,6 @@ function getLibraryUrl(lib) {
   return getScriptURL({ src: 'http://unpkg.com/' + lib }) + '\n'
 }
 
-const BUILTIN_BOILERPLATES = {
-  vue,
-  react
-}
 
 export function createBoilerplate({ title, lib }) {
   let body = ''
@@ -52,7 +57,9 @@ export function createBoilerplate({ title, lib }) {
         isSomeBoilerplateAdded = true
         const { style, template } = BUILTIN_BOILERPLATES[item]
         body += template
-        head += `<style>\n${addIndent(style, 2)}\n</style>`
+        if (style) {
+          head += `<style>\n${addIndent(style, 2)}\n</style>`
+        }
       } else {
         body += getLibraryUrl(item)
       }
