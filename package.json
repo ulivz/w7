@@ -1,6 +1,6 @@
 {
   "name": "w7",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "serves the pure htmls, Updates the browser on changes.",
   "repository": {
     "url": "ULIVZ/dev-server",
