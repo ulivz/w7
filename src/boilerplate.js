@@ -66,8 +66,8 @@ function createBoilerplate({ title, lib }) {
   }
   head = head || '<style></style>'
   if (!isSomeBoilerplateAdded) {
-    body = '  <div id="app"></div>' + body
-    body += '\n<script>\n</script>'
+    body = '<div id="app"></div>\n' + body
+    body += '<script>\n</script>'
   }
   head = addIndent(head, 2)
   body = addIndent(body, 2)
