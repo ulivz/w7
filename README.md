@@ -18,7 +18,7 @@
 
 * Pure HTML without any built process.
 * Hot code reloading.
-* Automatically transforms JS files using Buble/Babel (Vue & React).
+* Automatically transforms JS files using Babel (Vue & React).
 * Built-in boilerplates.
 
 
