@@ -2,7 +2,7 @@
 import cac from 'cac'
 import chalk from 'chalk'
 import superb from 'superb'
-import { existsSync, writeFileSync, getGitUser } from './util'
+import { existsSync, writeFileSync, getGitUser, statSync } from './util'
 import { devServer, boilerplate } from '.'
 
 const cli = cac()
@@ -16,9 +16,15 @@ cli
     if (options.input.length === 0) {
       delete options.input
     }
+
     if (options.input && existsSync(options.input[0])) {
-      options.entry = options.input[0]
+      if (statSync(options.input[0]).isDirectory()) {
+        options.cwd = options.input[0]
+      } else {
+        options.entry = options.input[0]
+      }
     }
+
     return devServer(options)
   })
   .option('cwd', {

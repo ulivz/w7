@@ -1,6 +1,6 @@
 'use strict'
 
-import { existsSync, writeFileSync, createWriteStream } from 'fs'
+import { existsSync, writeFileSync, createWriteStream, statSync } from 'fs'
 import { resolve, isAbsolute, relative, basename } from 'path'
 import { get } from 'http'
 import gitConfig from 'git-config'
@@ -11,7 +11,8 @@ export {
   writeFileSync,
   resolve,
   relative,
-  isAbsolute
+  isAbsolute,
+  statSync
 }
 
 export function downloadFile(url, target) {
