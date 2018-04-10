@@ -39,6 +39,7 @@ npm i w7 -g
   w7 app.html --cwd src                  # Custom cwd (alias: -c)
   w7 src/app.html --cwd src              # Ditto 
   w7 app.html --open-in-browser          # Open browser when server started (alias: -o)
+  w7 dist                                # If giving a directory, will serve for 'dist/index.html'
 ```
 
 All options:

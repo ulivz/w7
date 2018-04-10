@@ -24,7 +24,6 @@ cli
         options.entry = options.input[0]
       }
     }
-
     return devServer(options)
   })
   .option('cwd', {

@@ -21,7 +21,6 @@ export default function ({
   if (isAbsolute(entry)) {
     indexFile = entry
   } else {
-    entry = relative(cwd, entry)
     indexFile = resolve(cwd, entry)
   }
 
@@ -50,7 +49,11 @@ export default function ({
     open(`http://localhost:${port}`)
   }
 
-  const msg = '\n  > Serving ' + chalk.green(cwd) + ' now.\n' +
-    '  > Listening at ' + chalk.green(`http://localhost:${port}`) + '\n'
+  const msg =
+    `\n  > Serving ${chalk.green(cwd)} now.
+  > Entry File ${chalk.green(entry)}
+  > Listening at ${chalk.green(`http://localhost:${port}`)}\n`
   console.log(msg)
+
+  return server
 }
