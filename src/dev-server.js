@@ -6,7 +6,7 @@ import livereload from 'connect-livereload'
 import lrserver from 'livereload'
 import open from 'open'
 import chalk from 'chalk'
-import { existsSync, resolve, isAbsolute, relative } from './util'
+import { existsSync, resolve, isAbsolute } from './util'
 
 export default function ({
                            cwd,
