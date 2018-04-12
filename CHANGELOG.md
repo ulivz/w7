@@ -1,3 +1,8 @@
+<a name="0.0.5"></a>
+## [0.0.5](https://github.com/ULIVZ/dev-server/compare/v0.0.4...v0.0.5) (2018-04-12)
+
+
+
 ## 0.0.5
 
 ### Features
