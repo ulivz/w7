@@ -11,6 +11,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">= 6"
+  },
   "scripts": {
     "test": "npm run lint && jest",
     "lint": "xo",
