@@ -16,6 +16,8 @@
 
 ## Features
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ulivz/w7.svg)](https://greenkeeper.io/)
+
 * Pure HTML without any built process.
 * Hot code reloading.
 * Automatically transforms JS files using Babel (Vue & React).
