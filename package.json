@@ -42,25 +42,25 @@
     }
   },
   "dependencies": {
-    "cac": "^4.4.4",
+    "cac": "^6.5.2",
     "chalk": "^2.3.2",
     "connect": "^3.6.6",
     "connect-livereload": "^0.6.0",
     "git-config": "^0.0.7",
-    "git-config-path": "^1.0.1",
-    "livereload": "^0.7.0",
-    "open": "0.0.5",
-    "rollup-plugin-babel": "^3.0.3",
+    "git-config-path": "^2.0.0",
+    "livereload": "^0.8.0",
+    "open": "6.4.0",
+    "rollup-plugin-babel": "^4.3.3",
     "serve-static": "^1.13.2",
-    "superb": "^2.0.0"
+    "superb": "^4.0.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.4.0",
-    "bili": "3.0.4",
-    "eslint-config-rem": "^3.0.0",
-    "jest-cli": "^19.0.0",
-    "rollup-plugin-string": "^2.0.2",
-    "xo": "^0.18.0"
+    "bili": "4.8.1",
+    "eslint-config-rem": "^4.0.0",
+    "jest-cli": "^24.8.0",
+    "rollup-plugin-string": "^3.0.0",
+    "xo": "^0.24.0"
   },
   "xo": {
     "extends": "rem",
