@@ -4290,7 +4290,7 @@ math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
 
-meow@^3.4.2, meow@^3.7.0:
+meow@^3.4.2:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/meow/-/meow-3.7.0.tgz#72cb668b425228290abbfa856892587308a801fb"
   dependencies:
@@ -6094,11 +6094,11 @@ style-inject@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/style-inject/-/style-inject-0.3.0.tgz#d21c477affec91811cc82355832a700d22bf8dd3"
 
-superb@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/superb/-/superb-2.0.0.tgz#e0ac0c02b35c0ae34f141c594e19c1bf1c567d7f"
+superb@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/superb/-/superb-3.0.0.tgz#d29a17cf090f4658813c8debbb89033d3f1cf5bb"
+  integrity sha512-2N5f/nIVjOM5NimhLr9+KPPRo2OAtTVIxxshyOrBQsteUhCZJo7a+0I5TG/yt32v0hzOjXuxnUiHEWwYiPpVfg==
   dependencies:
-    meow "^3.7.0"
     unique-random-array "^1.0.0"
 
 supports-color@^2.0.0:
