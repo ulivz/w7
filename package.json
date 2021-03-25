@@ -52,7 +52,7 @@
     "open": "0.0.5",
     "rollup-plugin-babel": "^3.0.3",
     "serve-static": "^1.13.2",
-    "superb": "^2.0.0"
+    "superb": "^3.0.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.4.0",
