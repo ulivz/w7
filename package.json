@@ -42,7 +42,7 @@
     }
   },
   "dependencies": {
-    "cac": "^4.4.4",
+    "cac": "^5.0.11",
     "chalk": "^2.3.2",
     "connect": "^3.6.6",
     "connect-livereload": "^0.6.0",
